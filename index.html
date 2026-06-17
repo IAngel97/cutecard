@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta para Ale, mi domina uwu.</title>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #fdf2f8; 
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        #pantalla-inicio {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #fdf2f8;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 10;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: #ec4899;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            background-color: #db2777;
+        }
+
+        #carta {
+            display: none;
+            max-width: 700px;
+            width: 90%;
+            margin-top: 40px;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(236, 72, 153, 0.15);
+            position: relative;
+            z-index: 5;
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .instruccion {
+            text-align: center;
+            font-size: 14px;
+            color: #be185d;
+            font-style: italic;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .secreto {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: #fce7f3;
+            border-radius: 10px;
+            
+            filter: blur(5px);
+            color: transparent;
+            text-shadow: 0 0 8px #db2777;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.5s ease;
+        }
+
+        .secreto.revelado {
+            filter: blur(0);
+            color: #333;
+            text-shadow: none;
+            background-color: transparent;
+            cursor: default;
+            user-select: auto;
+        }
+
+        .contenedor-foto {
+            display: none;
+            justify-content: center;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .foto-cute {
+            max-width: 80%;
+            border: 8px solid #fff0f5;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(236, 72, 153, 0.3);
+            transform: scale(0.5) rotate(-10deg);
+            opacity: 0;
+            transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease;
+        }
+
+        .revelado .contenedor-foto {
+            display: flex;
+        }
+
+        .revelado .foto-cute {
+            transform: scale(1) rotate(2deg);
+            opacity: 1;
+        }
+
+        .sakura {
+            position: fixed;
+            top: -10px;
+            width: 15px;
+            height: 15px;
+            background: linear-gradient(
+                to bottom,
+                #ffd1dc,
+                #ffb7c5
+            );
+            border-radius: 70% 0 70% 0;
+            transform: rotate(45deg);
+            opacity: 0.7;
+            pointer-events: none;
+            animation: caer linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes caer {
+            0% {
+                transform: translateY(-10px) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(110vh) rotate(360deg);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="pantalla-inicio">
+        <h2 style="color: #be185d; margin-bottom: 20px;">Solo para vos...</h2>
+        <button onclick="empezarCarta()">Tocame para abrirlo uwu</button>
+    </div>
+
+    <div id="carta">
+        <audio id="musicaFondo" loop>
+            <source src="media/Loving You - Her's.mp3" type="audio/mpeg">
+        </audio>
+        
+        <p>Como no tengo linda letra, te escribo de la forma en donde más me esmero... programándote una página web jajajajaja. Tampoco no quiero que me tomes como una persona embustera o engañosa... esto está escrito 100% por mí, lo único que hizo la máquina es compilar mi código, levantar la web y ayudarme con los estilos... el resto está hecho 100% por mí (el agua la tomé yo, no la IA) :)</p>
+
+        <p>Bueno con esa intro ya te imaginas que soy muy autista jajajajajaja... pero x, soy bastante boludo y por eso a veces no cacho nada, me cuesta ser directo o puedo decir cosas que se mal interpreten... por eso te pido perdón si alguna vez dije algo que te hizo dudar o sentir que no estaba siendo sincero... Creo que esto me hace vulnerable a sentir que te estoy sacando la oportunidad de estar con alguien mejor, pero no quiero eso y odiaría que eso pase... suena muy yandere pero así me siento (síndrome del impostor XD) pero no hay día que me sienta tan afortunado de que me quieras, que me hayas dado tantas oportunidades y me hagas sentir especial, en nuestra propia manera jejejejeje... No creas que la temática de nuestra relación me molesta, me gusta ser tu perrito, me gusta que me trates agresivamente porque después me llenas de mimos y es muy reconfortante... hace que sea más divertido y dinámico!! me llena de dopamina ajajajajaja pero bueno, no soy Shakespeare pero te cuento las razones por la cual hace que esto que tenemos, para mí, sea muy especial y hace que te quiera tanto:</p>
+
+        <p class="instruccion">(Toca cada punto para que aparezcan uwu)</p>
+
+        <ul>
+            <li class="secreto" onclick="revelarTexto(this)">- Me gusta tu forma de ser, tu voz, tu sonrisa, tus pies, tus axilas, tu ser en general... sos lo más parecido a una ninfa de las antigua Grecia... sé que dicen que sentirse atraído por alguien solo por su cuerpo es muy superficial pero siento que me atrae de la forma más instintiva posible... tan natural como el mismo deseo... al final de cuentas, soy tu perrito woof woof.</li>
+            
+            <li class="secreto" onclick="revelarTexto(this)">- Me aceptas tal y como soy... no soy una persona atractiva, soy nerd, lerdo, otaku, no tengo muchos "atributos" XD... pero igual así me siento que en serio me querés, me siento deseado y como tu plaything te estoy dando cierto tipo de satisfacción... eso me parece demasiado especial y creo que opaca todas las preocupaciones que tengo.</li>
+            
+            <li class="secreto" onclick="revelarTexto(this)">- Me hiciste cambiar muchas cosas de mi estilo de vida... la primera vez me hiciste ver que estaba a punto de tirar algo por no querer salir de mi zona de comfort... una merecida sacudida que creo que también lo hiciste por frustración y me hizo sentir como un bobo... darme cuenta que le frustro a la persona que me gusta me hizo sentir como la mierda pero me ayudó a pelear por lo que quería, y lo que quería era estar contigo uwu.</li>
+            
+            <li class="secreto" onclick="revelarTexto(this)">- Me escuchas, me entendés y te preocupas por mí... nunca quise ser una carga para nadie, no me gusta crear problemas a nadie, me gusta solucionar y pasar desapercibido... pero me hiciste entender que necesitaba a alguien que esté ahí... no por obligación sino por algo más sincero... no sé si ves esto como la psicóloga de Tony Soprano ajajajajaja pero igual me parece especial que estés ahí para mí siempre.</li>
+            
+            <li class="secreto" onclick="revelarTexto(this)">- Me compartiste tu intimidad... para mí eso es irremplazable y muy especial, me tenés una confianza tremenda y eso me dio un boost de amor tremendo. estar pegados cuerpo a cuerpo, compartir de forma natural y que me cumplas todos mis fetiches es TREMENDO, me siento como en un sueño pero contigo y eso es más emocionante y candente (erección digital XD).</li>
+            
+            <li class="secreto" onclick="revelarTexto(this)">- Sos una personas interesante... me gusta saber más de vos, quiero saber más de vos, quiero alardearte en frente de mis padres y amigos (aunque sé que te vas a morir de la vergüenza/cringe ajajajajaja) pero eso me hace sentir que sea más especial.</li>
+            
+            <li class="secreto" onclick="revelarTexto(this)">- Siento que puedo avanzar seguro contigo... aunque aún no te confesé todo lo que siento porque sé que mereces que sea tan especial como todo lo que siento contigo... me tenés una paciencia admirable jajajajaja pero no te preocupes... te voy a pedir que seas mi novia de la forma que mi domina se merece uwu.</li>
+            
+            <li class="secreto" onclick="revelarTexto(this)">- Me comí todos los chocolates que me diste, eso es especial (?.</li>
+            
+            <li class="secreto" onclick="revelarTexto(this)">- Por más de que trate... me duele imaginar que te enojes conmigo, sé que es parte del play pero a veces me tomo muy en serio las cosas ajajajajaja.</li>
+            
+            <li class="secreto" onclick="revelarTexto(this)">
+                - Me aceptaste una cena, que no merecía pero me aceptaste y me diste un lindo recuerdo &lt;3
+                <div class="contenedor-foto">
+                    <img class="foto-cute" src="media/IMG_2453.jpg" alt="Nuestro recuerdo">
+                </div>
+            </li>
+            
+            <li class="secreto" onclick="revelarTexto(this)">- Esa misma noche tuvimos la intimidad más SEXY, ARDIENTE, TIERNA y ESPECTACULAR... hasta el punto que casi te pedí ser mi novia en medio del acto... pero iba a ser muy anadie jajajajaja ya te dije tiene que ser muy especial.</li>
+            
+            <li class="secreto" onclick="revelarTexto(this)">- La música que puse de fondo describe lo que siento por vos, cada vez que la escucho me acuerdo de vos.</li>
+            
+            <li class="secreto" onclick="revelarTexto(this)">- Siempre pienso en vos, tanto de forma NSFW y SFW jajajajajaja</li>
+        </ul>
+
+        <div class="secreto" onclick="revelarTexto(this)">
+            <p>Quiero escribirte más cosas pero sé que me vas a odiar por llenar la página de texto XD así que con esto espero que, y de la forma más sincera, sientas que lo nuestro es tan especial como lo siento yo.</p>
+            <p>Me despido cordialmente.</p>
+            <p style="font-weight: bold;">Siempre tuyo, tu perrito Ángel.</p>
+        </div>
+    </div>
+
+    <script>
+        function empezarCarta() {
+            document.getElementById('pantalla-inicio').style.display = 'none';
+            document.getElementById('carta').style.display = 'block';
+            
+            let audio = document.getElementById('musicaFondo');
+            audio.volume = 0.5;
+            audio.play();
+        }
+
+        function revelarTexto(elemento) {
+            elemento.classList.add('revelado');
+        }
+
+        function crearPetalo() {
+            const petalo = document.createElement('div');
+            petalo.classList.add('sakura');
+
+            petalo.style.left = Math.random() * window.innerWidth + 'px';
+
+            const tamaño = Math.random() * 10 + 10;
+            petalo.style.width = tamaño + 'px';
+            petalo.style.height = tamaño + 'px';
+
+            petalo.style.animationDuration = (Math.random() * 5 + 5) + 's';
+
+            document.body.appendChild(petalo);
+
+            setTimeout(() => {
+                petalo.remove();
+            }, 10000);
+        }
+
+        setInterval(crearPetalo, 300);
+
+    </script>
+</body>
+</html>
