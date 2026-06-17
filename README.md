@@ -1,2 +1,2 @@
 # cutecard
-Una carta personal.
+Una carta personal. Para Ale, mi domina <3
